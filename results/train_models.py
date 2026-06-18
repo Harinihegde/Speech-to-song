@@ -51,6 +51,10 @@ for name,model in models.items():
     print(classification_report(y_test,pred,target_names=['Non-transforming','transforming']))
     results[name]=acc
     predictions[name]=pred
+    if hasattr(model, 'feature_importances_'):
+        imp = pd.DataFrame({'feature': X.columns, 'importance': model.feature_importances_})
+        print("\nTop 5 Important Features:")
+        print(imp.sort_values('importance', ascending=False).head())
 
 print(f"\n{'='*50}\nSUMMARY\n{'='*50}")
 for name,acc in results.items():

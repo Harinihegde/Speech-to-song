@@ -25,8 +25,8 @@ print(f"Remaining to label: {len(unlabeled)}")
 
 # YOU label: clips 049-068
 # YOUR TEAMMATE labels: clips 069-088
-start_clip = 49  # Change this: You=49, Teammate=69
-end_clip = 68    # Change this: You=68, Teammate=88
+start_clip = 70  # Change this: You=49, Teammate=69
+end_clip = 88    # Change this: You=68, Teammate=88
 
 clips_to_label = [f"clip_{i:03d}.wav" for i in range(start_clip, end_clip+1)]
 clips_to_label = [c for c in clips_to_label if c in unlabeled]
